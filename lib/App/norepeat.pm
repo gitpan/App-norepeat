@@ -1,6 +1,6 @@
 package App::norepeat;
 
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 1;
 # ABSTRACT: Run commands, but not repeatedly
@@ -17,7 +17,7 @@ App::norepeat - Run commands, but not repeatedly
 
 =head1 VERSION
 
-version 0.02
+This document describes version 0.03 of App::norepeat (from Perl distribution App-norepeat), released on 2014-06-07.
 
 =head1 SYNOPSIS
 
