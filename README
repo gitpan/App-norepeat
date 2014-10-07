@@ -2,8 +2,8 @@ NAME
     App::norepeat - Run commands, but not repeatedly
 
 VERSION
-    This document describes version 0.03 of App::norepeat (from Perl
-    distribution App-norepeat), released on 2014-06-07.
+    This document describes version 0.04 of App::norepeat (from Perl
+    distribution App-norepeat), released on 2014-10-07.
 
 SYNOPSIS
     See the command-line script norepeat.
@@ -14,7 +14,7 @@ HOMEPAGE
 
 SOURCE
     Source repository is at
-    <https://github.com/sharyanto/perl-App-norepeat>.
+    <https://github.com/perlancar/perl-App-norepeat>.
 
 BUGS
     Please report any bugs or feature requests on the bugtracker website
@@ -24,10 +24,10 @@ BUGS
     to an existing test-file that illustrates the bug or desired feature.
 
 AUTHOR
-    Steven Haryanto <stevenharyanto@gmail.com>
+    perlancar <perlancar@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Steven Haryanto.
+    This software is copyright (c) 2014 by perlancar@cpan.org.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

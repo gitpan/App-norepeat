@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!perl
 
 use 5.010001;
 use strict;
@@ -8,7 +8,7 @@ use Fcntl qw(:DEFAULT :flock);
 use Getopt::Long;
 use Time::Local;
 
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 my $Key;
 my $Data_File      = "$ENV{HOME}/norepeat.dat";
@@ -32,6 +32,11 @@ sub parse_cmdline {
         'num|n=i'        => \$Num,
         'period|p=s'     => \$Period,
         'ignore-failure' => \$Ignore_Failure,
+        'hourly'         => sub { $Period = 'hourly' },
+        'daily'          => sub { $Period = 'daily' },
+        'weekly'         => sub { $Period = 'weekly' },
+        'monthly'        => sub { $Period = 'monthly' },
+        'yearly'         => sub { $Period = 'yearly' },
         'help|h'         => sub {
             print <<USAGE;
 Usage:
@@ -220,7 +225,7 @@ norepeat - Run commands, but not repeatedly
 
 =head1 VERSION
 
-This document describes version 0.03 of norepeat (from Perl distribution App-norepeat), released on 2014-06-07.
+This document describes version 0.04 of norepeat (from Perl distribution App-norepeat), released on 2014-10-07.
 
 =head1 SYNOPSIS
 
@@ -333,6 +338,26 @@ Set filename to record execution to. Defaults to C<~/norepeat.dat>.
 Allow (n-1) repeating during the same period. Defaults to 1, which means to not
 allow any repeats. 2 means allow repeat once (for a total of 2 executions).
 
+=item * --hourly
+
+Shortcut for C<--period hourly>.
+
+=item * --daily
+
+Shortcut for C<--period daily>.
+
+=item * --weekly
+
+Shortcut for C<--period weekly>.
+
+=item * --monthly
+
+Shortcut for C<--period monthly>.
+
+=item * --yearly
+
+Shortcut for C<--period yearly>.
+
 =back
 
 =head1 EXIT CODES
@@ -383,7 +408,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/App-norepe
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-App-norepeat>.
+Source repository is at L<https://github.com/perlancar/perl-App-norepeat>.
 
 =head1 BUGS
 
@@ -395,11 +420,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
